@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Task Manager</h1>
+  </header>
+  <main>
+    <!-- Form to Add or Edit Task -->
+    <section class="task-form">
+      <form id="taskForm">
+        <label for="task_name">Task Name:</label>
+        <input type="text" id="task_name" required>
+
+        <label for="stakeholder">Stakeholder:</label>
+        <input type="text" id="stakeholder" required>
+
+        <label for="due_date">Due Date:</label>
+        <input type="date" id="due_date" required>
+
+        <label for="status">Status:</label>
+        <select id="status" required>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+
+        <button type="submit" id="addTaskButton">Add Task</button>
+        <button type="button" id="editTaskButton" style="display: none;">Update Task</button>
+      </form>
+    </section>
+
+    <!-- Task List -->
+    <section class="task-list">
+      <h2>Your Tasks</h2>
+      <p id="completionPercentage">Completion Percentage: 0%</p>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Task Name</th>
+            <th>Stakeholder</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="taskTable"></tbody>
+      </table>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Task Manager</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
